@@ -1,12 +1,14 @@
 using System.Threading.Channels;
+using TGR.Unosquare.RaspberryIO;
+using TGR.Unosquare.WiringPi;
 
 namespace Robocontrol
 {
     public class Program
     {
-        public static List<IServoController> Servos = new();
+        public static List<IServoController> Servos = [];
 
-        public static List<Task> MaintenanceTasks = new();
+        public static List<Task> MaintenanceTasks = [];
 
         public static PCA9685 pca;
 
@@ -16,6 +18,7 @@ namespace Robocontrol
 
             if(!mock)
             {
+                Pi.Init<BootstrapWiringPi>();
                 pca = new PCA9685(0x40, false);
                 pca.setPWMFreq(50);
             }

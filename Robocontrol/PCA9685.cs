@@ -1,5 +1,5 @@
-﻿using Unosquare.RaspberryIO;
-using Unosquare.RaspberryIO.Abstractions;
+﻿using TGR.Unosquare.RaspberryIO;
+using TGR.Unosquare.RaspberryIO.Abstractions;
 
 namespace Robocontrol
 {
